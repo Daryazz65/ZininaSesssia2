@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZininaSesssia2.Model;
 
 namespace ZininaSesssia2.View.Windows
 {
@@ -19,9 +20,26 @@ namespace ZininaSesssia2.View.Windows
     /// </summary>
     public partial class UserrWindow : Window
     {
-        public UserrWindow()
+        private static ZininaSessia2Entities _context = App.GetContext();
+        private User _selectedUser;
+        public UserrWindow(Model.User selectedUser)
         {
             InitializeComponent();
+            _selectedUser = selectedUser;
+        }
+
+        private void OneHl_Click(object sender, RoutedEventArgs e)
+        {
+            JournalWindow journalWindow = new JournalWindow();
+            journalWindow.Show();
+            Close();
+        }
+
+        private void TwoHl_Click(object sender, RoutedEventArgs e)
+        {
+            ProfileWindow profileWindow = new ProfileWindow(_selectedUser);
+            profileWindow.Show();
+            Close();
         }
     }
 }

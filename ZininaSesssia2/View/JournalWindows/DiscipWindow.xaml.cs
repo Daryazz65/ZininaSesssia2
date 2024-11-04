@@ -22,6 +22,11 @@ namespace ZininaSesssia2.View.JournalWindows
         public DiscipWindow()
         {
             InitializeComponent();
+
+        }
+        private void ListDicp()
+        {
+
         }
     }
 }

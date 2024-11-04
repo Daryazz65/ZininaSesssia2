@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZininaSesssia2.View.Windows"
         mc:Ignorable="d"
-        Title="SignUpWindow" Height="450" Width="800">
+        Title="Окно авторизации" MinHeight="350" MinWidth="580"
+        WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight">
     <Grid>
-        
+        <TextBlock Text="Обратитесь к системному администратору"
+                  FontSize="25" HorizontalAlignment="Center"
+                  VerticalAlignment="Center"/>
+        <Button Name="NazadBtn" Content="Назад" 
+                    Click="NazadBtn_Click"  Margin="10 10 500 300"/>
     </Grid>
 </Window>

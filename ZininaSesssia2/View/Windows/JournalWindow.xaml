@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZininaSesssia2.View.Windows"
         mc:Ignorable="d"
-        Title="JournalWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Окно отчета" Height="500" Width="500"
+        WindowStartupLocation="CenterScreen">
+    <Grid Name="ProfileGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Отчетный журнал" FontWeight="Bold" 
+                   HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="1" FontSize="25" HorizontalAlignment="Center"><Hyperlink Name="OneHl" 
+                    Click="OneHl_Click">Сведения о специальности</Hyperlink></TextBlock>
+        <TextBlock Grid.Row="2" FontSize="25" HorizontalAlignment="Center"><Hyperlink Name="TwoHl" 
+                    Click="TwoHl_Click">Сведения о кафедре</Hyperlink></TextBlock>
+        <TextBlock Grid.Row="3" FontSize="25" HorizontalAlignment="Center"><Hyperlink Name="ThreeHl" 
+                    Click="ThreeHl_Click">Сведения о дисциплине </Hyperlink></TextBlock>
     </Grid>
 </Window>

@@ -23,5 +23,12 @@ namespace ZininaSesssia2.View.Windows
         {
             InitializeComponent();
         }
+
+        private void NazadBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AuthorizationWindow authorizationWindow = new AuthorizationWindow();
+            authorizationWindow.Show();
+            Close();
+        }
     }
 }

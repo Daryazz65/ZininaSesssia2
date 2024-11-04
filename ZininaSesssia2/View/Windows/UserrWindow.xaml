@@ -7,6 +7,13 @@
         mc:Ignorable="d"
         Title="UserrWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" FontSize="25" HorizontalAlignment="Center"><Hyperlink Name="OneHl"
+                    Click="OneHl_Click">Журнал</Hyperlink></TextBlock>
+        <TextBlock Grid.Row="1" FontSize="25" HorizontalAlignment="Center"><Hyperlink Name="TwoHl" 
+                    Click="TwoHl_Click">Мой профиль</Hyperlink></TextBlock>
     </Grid>
 </Window>

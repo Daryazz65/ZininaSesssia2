@@ -4,9 +4,20 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZininaSesssia2.View.JournalWindows"
-        mc:Ignorable="d"
-        Title="DiscipWindow" Height="450" Width="800">
-    <Grid>
-        
+       mc:Ignorable="d"
+        Title="Окно" Height="500" Width="1200"
+        WindowStartupLocation="CenterScreen">
+    <Grid Name="ProfileGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".15*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Сведения о дисциплинах" FontWeight="Bold" 
+                   HorizontalAlignment="Center"/>
+        <Grid Grid.Row="1" Margin="10">
+            <ListBox Name="DicpLb"/>
+
+        </Grid>
     </Grid>
 </Window>

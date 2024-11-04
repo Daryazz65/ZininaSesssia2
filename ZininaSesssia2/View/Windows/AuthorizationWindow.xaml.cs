@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZininaSesssia2.AppData;
+using ZininaSesssia2.Model;
 
 namespace ZininaSesssia2.View.Windows
 {
@@ -19,9 +21,41 @@ namespace ZininaSesssia2.View.Windows
     /// </summary>
     public partial class AuthorizationWindow : Window
     {
+        private static ZininaSessia2Entities _context = App.GetContext();
         public AuthorizationWindow()
         {
+            List<string> roles = new List<string> { "Cотрудник методического отдела" };
             InitializeComponent();
+            RoleCmb.ItemsSource = roles;
+        }
+
+        private void EntryBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (AuthoriseHelper.Authorise(LoginTb.Text, PassTb.Password, RoleCmb.SelectedItem as string))
+            {
+                CAPTCHAWindow cAPTCHAWindow = new CAPTCHAWindow();
+                if (cAPTCHAWindow.ShowDialog() == true)
+                {
+                    if (RoleCmb.SelectedIndex == 0)
+                    {
+                        UserrWindow userrWindow = new UserrWindow(AuthoriseHelper.selectedUser);
+                        userrWindow.Show();
+                        Close();
+                    }
+                }
+            }
+        }
+
+        private void SignUpHl_Click(object sender, RoutedEventArgs e)
+        {
+            SignUpWindow signUpWindow = new SignUpWindow();
+            signUpWindow.Show();
+            Close();
+        }
+
+        private void EnterHl_Click(object sender, RoutedEventArgs e)
+        {
+            // ---.
         }
     }
 }

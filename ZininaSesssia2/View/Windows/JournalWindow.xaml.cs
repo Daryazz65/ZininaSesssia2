@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZininaSesssia2.View.JournalWindows;
 
 namespace ZininaSesssia2.View.Windows
 {
@@ -22,6 +23,27 @@ namespace ZininaSesssia2.View.Windows
         public JournalWindow()
         {
             InitializeComponent();
+        }
+
+        private void OneHl_Click(object sender, RoutedEventArgs e)
+        {
+            SpecWindow specWindow = new SpecWindow();
+            specWindow.Show();
+            Close();
+        }
+
+        private void TwoHl_Click(object sender, RoutedEventArgs e)
+        {
+            KafedWindow kafedWindow = new KafedWindow();
+            kafedWindow.Show();
+            Close();
+        }
+
+        private void ThreeHl_Click(object sender, RoutedEventArgs e)
+        {
+            DiscipWindow discipWindow = new DiscipWindow();
+            discipWindow.Show();
+            Close();
         }
     }
 }

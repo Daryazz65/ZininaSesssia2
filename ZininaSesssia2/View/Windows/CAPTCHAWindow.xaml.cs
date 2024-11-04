@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ZininaSesssia2.AppData;
 
 namespace ZininaSesssia2.View.Windows
 {
@@ -19,9 +20,35 @@ namespace ZininaSesssia2.View.Windows
     /// </summary>
     public partial class CAPTCHAWindow : Window
     {
+        string captcha;
+        int errorsCount = 0;
         public CAPTCHAWindow()
         {
             InitializeComponent();
+            captcha = AuthoriseHelper.GenerateCaptcha();
+            CaptchaTbl.Text = captcha;
+        }
+
+        private void EntrytBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (CaptchaTb.Text == captcha)
+            {
+                DialogResult = true;
+            }
+            else
+            {
+                errorsCount++;
+                MessageBoxHelper.Error("CAPTCHA введеа неправильно.");
+                captcha = AuthoriseHelper.GenerateCaptcha();
+                CaptchaTbl.Text = captcha;
+                CaptchaTb.Text = string.Empty;
+            }
+            if (errorsCount == 3)
+            {
+                BlockWindow blockWindow = new BlockWindow();
+                blockWindow.ShowDialog();
+                errorsCount = 0;
+            }
         }
     }
 }

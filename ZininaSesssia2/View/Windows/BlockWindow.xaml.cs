@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -22,6 +23,18 @@ namespace ZininaSesssia2.View.Windows
         public BlockWindow()
         {
             InitializeComponent();
+            Timer timer;
+            timer = new Timer(CloseWindow, null, 10000, Timeout.Infinite);
+
+            void CloseWindow(object state)
+            {
+                Dispatcher.Invoke(() =>
+                {
+                    this.Close();
+
+                });
+
+            }
         }
     }
 }
