@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1deebf1613cf45b9895123209eb52777" Name="Diagram1">
+        <EntityTypeShape EntityType="ZininaSessia2Model.Activity" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZininaSessia2Model.Department" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZininaSessia2Model.Discipline" Width="1.5" PointX="0.75" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZininaSessia2Model.DisciplineDepartment" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZininaSessia2Model.Faculty" Width="1.5" PointX="1.5" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZininaSessia2Model.FormOfStory" Width="1.5" PointX="1.5" PointY="28.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZininaSessia2Model.Gender" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZininaSessia2Model.ReportType" Width="1.5" PointX="1.5" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZininaSessia2Model.Role" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZininaSessia2Model.Specialite" Width="1.5" PointX="1.5" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZininaSessia2Model.User" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="ZininaSessia2Model.FK_Activity_DisciplineDepartment" ManuallyRouted="false" />
+        <AssociationConnector Association="ZininaSessia2Model.FK_Activity_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ZininaSessia2Model.FK_Departments_Faculty" ManuallyRouted="false" />
+        <AssociationConnector Association="ZininaSessia2Model.FK_DisciplineDepartment_Departments" ManuallyRouted="false" />
+        <AssociationConnector Association="ZininaSessia2Model.FK_Discipline_ReportType" ManuallyRouted="false" />
+        <AssociationConnector Association="ZininaSessia2Model.FK_Discipline_Specialites" ManuallyRouted="false" />
+        <AssociationConnector Association="ZininaSessia2Model.FK_DisciplineDepartment_Discipline" ManuallyRouted="false" />
+        <AssociationConnector Association="ZininaSessia2Model.FK_Specialites_FormOfStory" ManuallyRouted="false" />
+        <AssociationConnector Association="ZininaSessia2Model.FK_User_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="ZininaSessia2Model.FK_User_Role" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
