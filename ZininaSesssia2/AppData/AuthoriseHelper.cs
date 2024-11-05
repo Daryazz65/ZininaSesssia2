@@ -17,6 +17,7 @@ namespace ZininaSesssia2.AppData
         /// <param name="login"></param>
         /// <param name="password"></param>
         /// <returns></returns>
+
         public static bool Authorise(string login, string password, string role)
         {
             if (login == string.Empty || password == string.Empty)
@@ -24,35 +25,16 @@ namespace ZininaSesssia2.AppData
                 MessageBoxHelper.Error("Не все поля для ввода были заполнены.");
                 return false;
             }
-            //else
-            //{
-            //    if (role == "Cотрудник методички")
-            //    {
-            //        List<User> users = _context.Users.ToList();
-            //        foreach (User us in users)
-            //        {
-            //            if (login == us.Id && password == us.Password)
-            //            {
-            //                selectedUser = us;
-            //                return true;
-            //            }
-            //        }
-            //        if (selectedUser == null)
-            //        {
-            //            MessageBoxHelper.Error("Неправильно введен логин или пароль");
-            //            return false;
-            //        }
-            //    }
             else
             {
-                if (role == "Сотрудник методического отдела")
+                if (role == "Cотрудник методического отдела")
                 {
                     List<User> users = _context.Users.ToList();
-                    foreach (User us in users)
+                    foreach (User org in users)
                     {
-                        if (login == us.Id.ToString() && password == us.Password)
+                        if (login == org.Id.ToString() && password == org.Password)
                         {
-                            selectedUser = us;
+                            selectedUser = org;
                             return true;
                         }
                     }
@@ -78,6 +60,48 @@ namespace ZininaSesssia2.AppData
             }
 
         }
+        //public static bool Authorise(string login, string password, string role)
+        //{
+        //    if (login == string.Empty || password == string.Empty)
+        //    {
+        //        MessageBoxHelper.Error("Не все поля для ввода были заполнены.");
+        //        return false;
+        //    }
+        //    else
+        //    {
+        //        if (role == "Cотрудник методички")
+        //        {
+        //            List<User> users = _context.Users.ToList();
+        //            foreach (User us in users)
+        //            {
+        //                if (login == us.Password && password == us.Password)
+        //                {
+        //                    selectedUser = us;
+        //                    return true;
+        //                }
+        //            }
+        //            if (selectedUser == null)
+        //            {
+        //                MessageBoxHelper.Error("Неправильно введен логин или пароль");
+        //                return false;
+        //            }
+        //        }
+
+        //        else
+        //        {
+        //            return false;
+        //        }
+        //        if (selectedUser != null)
+        //        {
+        //            return true;
+        //        }
+        //        else
+        //        {
+        //            return false;
+        //        }
+        //    }
+
+        //}
 
         /// <summary>
         /// Генерирует текст капчи.

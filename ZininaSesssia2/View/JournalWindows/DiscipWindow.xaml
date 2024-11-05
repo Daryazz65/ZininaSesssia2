@@ -12,11 +12,65 @@
             <RowDefinition Height=".15*" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
-
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
         <TextBlock Text="Сведения о дисциплинах" FontWeight="Bold" 
-                   HorizontalAlignment="Center"/>
-        <Grid Grid.Row="1" Margin="10">
-            <ListBox Name="DicpLb"/>
+                   HorizontalAlignment="Left" Grid.Column="1" Margin="5"/>
+            <Button Name="NazadBtn" Content="Назад" Grid.Column="0" 
+                    Click="NazadBtn_Click"  Margin="5"/>
+        </Grid>
+        
+        <Grid x:Name="DiscipGr" Grid.Row="1" Margin="10">
+            <ListView x:Name="listviewDis" HorizontalAlignment="Stretch"  
+                  Margin="5 0 0 0" VerticalAlignment="Stretch" 
+                      SelectionChanged="listviewDis_SelectionChanged">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn DisplayMemberBinding="{Binding Discipline.Name}" 
+                      Header="Название" Width="100"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Discipline.Semester}" 
+                      Header="Семестр" Width="100"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Specialite.Name}" 
+                      Header="Cпециальность" Width="100"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Discipline.LectureHours}" 
+                      Header="Часы лекций" Width="100"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Discipline.LabHours}" 
+                      Header="Часы лабороторных" Width="100"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Discipline.PracticeHours}" 
+                      Header="Часы практики" Width="100"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding ReportType.Name}" 
+                      Header="Вид отчета" Width="100"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            
+            
+                <!--<ListView Name="BookAuthorLv" SelectionChanged="BookAuthorLv_SelectionChanged">
+                    <ListView.View>
+                        <GridView>
+                            --><!-- Создаем столбцы Title и Author. --><!--
+                            <GridViewColumn Header="Title" DisplayMemberBinding="{Binding book.Title}"/>
+                            <GridViewColumn Header="Author">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock>
+                                            <TextBlock.Text>
+                                                <MultiBinding StringFormat="{}{0} {1} {2}">
+                                                    <Binding Path="author.LastName"/>
+                                                    <Binding Path="author.FirstName"/>
+                                                    <Binding Path="author.MiddleName"/>
+                                                </MultiBinding>
+                                            </TextBlock.Text>
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>-->
 
         </Grid>
     </Grid>

@@ -5,98 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZininaSesssia2.View.JournalWindows"
        mc:Ignorable="d"
-        Title="Окно профиля" Height="500" Width="1200"
+        Title="Окно" Height="500" Width="1200"
         WindowStartupLocation="CenterScreen">
     <Grid Name="ProfileGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height=".15*" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
-
-        <TextBlock Text="Сведения о специальности" FontWeight="Bold" 
-                   HorizontalAlignment="Center"/>
-        <Grid Grid.Row="1" Margin="10">
+        <Grid>
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300" />
                 <ColumnDefinition Width="1*" />
-                <ColumnDefinition Width=".8*" />
             </Grid.ColumnDefinitions>
+            <TextBlock Text="Сведения о кафедрах" FontWeight="Bold" 
+                   HorizontalAlignment="Left" Grid.Column="1" Margin="5"/>
+            <Button Name="NazadBtn" Content="Назад" Grid.Column="0" 
+                    Click="NazadBtn_Click"  Margin="5"/>
+        </Grid>
 
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width=".6*" />
-                    <ColumnDefinition Width="1*" />
-                </Grid.ColumnDefinitions>
-
-                <StackPanel>
-                    <TextBlock Text="Название:"/>
-                    <Border Height="5"/>
-                    <TextBlock Text="Квалификация"/>
-                    <Border Height="5"/>
-                    <TextBlock Text="Кол-во часов:"/>
-                    <Border Height="5"/>
-                    <TextBlock Text="Форма обучения:"/>
-                    <Border Height="5"/>
-                </StackPanel>
-
-
-
-                <StackPanel Grid.Column="1">
-                    <TextBlock Text="{Binding Specialties.Name}" />
-                    <Border Height="5"/>
-                    <TextBlock Text="{Binding Specialties.Qualification}"/>
-                    <Border Height="5"/>
-                    <TextBlock Text="{Binding Specialties.Duration}"/>
-                    <Border Height="5"/>
-                    <TextBlock Text="{Binding EducationForm.Name}"/>
-                    <Border Height="5"/>
-                </StackPanel>
-
-
-            </Grid>
-            <StackPanel Grid.Column="1" Margin="10">
-                <CheckBox Name="ChangeNameCb" 
-                          Content="Смена названия:" 
-                          Checked="ChangeNameCb_Checked" 
-                          Unchecked="ChangeNameCb_Unchecked" 
-                          VerticalContentAlignment="Center"/>
-                <Border Height="5"/>
-                <Grid Name="NameGrid">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width=".8*" />
-                        <ColumnDefinition Width="1*" />
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="1*" />
-                        <RowDefinition Height="10" />
-                        <RowDefinition Height="1*" />
-                        <RowDefinition Height="1*" />
-                    </Grid.RowDefinitions>
-
-                    <TextBlock Text="Название:"/>
-                    <TextBox Name="NameTb" Grid.Column="1"/>
-                    <TextBox Name="NameTbTwo" Grid.Column="1"/>
-                    <TextBlock Text="Повтор названия:" Grid.Row="2"/>
-                    <TextBox Name="NewPasswordTb" 
-                             Grid.Column="1" Grid.Row="2"/>
-                    <PasswordBox Name="NewNamePb" 
-                                 Grid.Column="1" Grid.Row="2"/>
-                    <StackPanel Grid.Row="3" Grid.ColumnSpan="2">
-                        <Border Height="5"/>
-                        <CheckBox Name="IsVisibleCb" 
-                                  Checked="IsVisibleCb_Checked" 
-                                  Unchecked="IsVisibleCb_Unchecked"  
-                                  Content="Видимое название" 
-                                  VerticalContentAlignment="Center"/>
-                        <Border Height="5"/>
-                        <StackPanel Orientation="Horizontal">
-                            <Button Name="OkBtn" Content="Ok" Click="OkBtn_Click"/>
-                            <Border Width="20"/>
-                            <Button Name="CancelBtn" Content="Отмена" 
-                                    Click="CancelBtn_Click"/>
-                        </StackPanel>
-                    </StackPanel>
-                </Grid>
-            </StackPanel>
+        <Grid x:Name="DiscipGr" Grid.Row="1" Margin="10">
+            <ListView x:Name="listviewDis" HorizontalAlignment="Stretch"  
+                  Margin="5 0 0 0" VerticalAlignment="Stretch" 
+                      >
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn DisplayMemberBinding="{Binding Discipline.Name}" 
+                      Header="Название" Width="100"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Discipline.Semester}" 
+                      Header="Номер тлф" Width="100"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Specialite.Name}" 
+                      Header="Факультет" Width="100"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Discipline.LectureHours}" 
+                      Header="ФИО заведующего" Width="100"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Discipline.LabHours}" 
+                      Header="Степень заведующего" Width="100"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Discipline.PracticeHours}" 
+                      Header="Звание заведующего" Width="100"/>
+                        
+                    </GridView>
+                </ListView.View>
+            </ListView>
         </Grid>
     </Grid>
 </Window>

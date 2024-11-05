@@ -5,8 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZininaSesssia2.View.JournalWindows"
         mc:Ignorable="d"
-        Title="SpecWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Окно" Height="500" Width="1200"
+        WindowStartupLocation="CenterScreen">
+    <Grid Name="ProfileGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".15*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Сведения о специальностях" FontWeight="Bold" 
+                   HorizontalAlignment="Left" Grid.Column="1" Margin="5"/>
+            <Button Name="NazadBtn" Content="Назад" Grid.Column="0" 
+                    Click="NazadBtn_Click"  Margin="5"/>
+        </Grid>
+
+        <Grid x:Name="DiscipGr" Grid.Row="1" Margin="10">
+            <ListView x:Name="listviewDis" HorizontalAlignment="Stretch"  
+                  Margin="5 0 0 0" VerticalAlignment="Stretch" 
+                      >
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn DisplayMemberBinding="{Binding Discipline.Name}" 
+                      Header="Название" Width="100"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Discipline.Semester}" 
+                      Header="Код" Width="100"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Specialite.Name}" 
+                      Header="Квалификация" Width="100"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Discipline.LectureHours}" 
+                      Header="Срок обучения" Width="100"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Discipline.LabHours}" 
+                      Header="Форма обучения" Width="100"/>
+
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
     </Grid>
 </Window>

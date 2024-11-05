@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZininaSesssia2.View.Windows"
-        mc:Ignorable="d"
+       mc:Ignorable="d"
         Title="Окно авторизации" MinHeight="350" MinWidth="580"
         WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight">
     <Grid>
@@ -34,9 +34,10 @@
         <TextBlock Text="Пароль:" Grid.Column="1" Grid.Row="5"/>
         <PasswordBox Name="PassTb" Grid.Column="3" Grid.Row="5"/>
         <StackPanel Grid.Column="1" Grid.Row="7">
-            <Button Name="EntryBtn" Content="Войти" Click="EntryBtn_Click"  HorizontalAlignment="Left"/>
-            <TextBlock FontSize="15"><Hyperlink Name="SignUpHl" Click="SignUpHl_Click">Зарегистрироваться</Hyperlink></TextBlock>
-            <TextBlock FontSize="15"><Hyperlink Name="EnterHl" Click="EnterHl_Click">Войти без авторизации</Hyperlink></TextBlock>
+            <Button Name="EntryBtn" Content="Войти" 
+                    Click="EntryBtn_Click_1"  HorizontalAlignment="Left"/>
+            <TextBlock FontSize="15"><Hyperlink Name="SignUpHl" 
+                    Click="SignUpHl_Click_1">Зарегистрироваться</Hyperlink></TextBlock>
         </StackPanel>
     </Grid>
 </Window>

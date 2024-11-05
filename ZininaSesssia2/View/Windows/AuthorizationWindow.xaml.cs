@@ -24,12 +24,12 @@ namespace ZininaSesssia2.View.Windows
         private static ZininaSessia2Entities _context = App.GetContext();
         public AuthorizationWindow()
         {
-            List<string> roles = new List<string> { "Cотрудник методического отдела" };
+            List<string> roles = new List<string> { "Сотрудник методического отдела", "Сисадмин" };
             InitializeComponent();
             RoleCmb.ItemsSource = roles;
         }
 
-        private void EntryBtn_Click(object sender, RoutedEventArgs e)
+        private void EntryBtn_Click_1(object sender, RoutedEventArgs e)
         {
             if (AuthoriseHelper.Authorise(LoginTb.Text, PassTb.Password, RoleCmb.SelectedItem as string))
             {
@@ -46,7 +46,7 @@ namespace ZininaSesssia2.View.Windows
             }
         }
 
-        private void SignUpHl_Click(object sender, RoutedEventArgs e)
+        private void SignUpHl_Click_1(object sender, RoutedEventArgs e)
         {
             SignUpWindow signUpWindow = new SignUpWindow();
             signUpWindow.Show();

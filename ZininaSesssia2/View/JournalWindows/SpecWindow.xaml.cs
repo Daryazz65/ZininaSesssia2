@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ZininaSesssia2.Model;
+using ZininaSesssia2.View.Windows;
 
 namespace ZininaSesssia2.View.JournalWindows
 {
@@ -20,9 +21,6 @@ namespace ZininaSesssia2.View.JournalWindows
     /// </summary>
     public partial class SpecWindow : Window
     {
-        User _selectedUser;
-        string password = string.Empty;
-        string newPassword = string.Empty;
         private static ZininaSessia2Entities _context = App.GetContext();
         public SpecWindow()
         {
@@ -58,6 +56,13 @@ namespace ZininaSesssia2.View.JournalWindows
         private void CancelBtn_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void NazadBtn_Click(object sender, RoutedEventArgs e)
+        {
+            JournalWindow journalWindow = new JournalWindow();
+            journalWindow.Show();
+            Close();
         }
     }
 }
