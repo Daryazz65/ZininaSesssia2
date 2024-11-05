@@ -18,7 +18,7 @@ namespace ZininaSesssia2.AppData
         /// <param name="password"></param>
         /// <returns></returns>
 
-        public static bool Authorise(string login, string password, string role)
+        public static bool Authorise(string login, string password)
         {
             if (login == string.Empty || password == string.Empty)
             {
@@ -27,8 +27,8 @@ namespace ZininaSesssia2.AppData
             }
             else
             {
-                if (role == "Cотрудник методического отдела")
-                {
+                //if (role == "Cотрудник методического отдела")
+                //{
                     List<User> users = _context.Users.ToList();
                     foreach (User org in users)
                     {
@@ -43,7 +43,7 @@ namespace ZininaSesssia2.AppData
                         MessageBoxHelper.Error("Неправильно введен логин или пароль");
                         return false;
                     }
-                }
+                //}
 
                 else
                 {

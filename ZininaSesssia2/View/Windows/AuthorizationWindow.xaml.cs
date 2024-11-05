@@ -31,7 +31,7 @@ namespace ZininaSesssia2.View.Windows
 
         private void EntryBtn_Click_1(object sender, RoutedEventArgs e)
         {
-            if (AuthoriseHelper.Authorise(LoginTb.Text, PassTb.Password, RoleCmb.SelectedItem as string))
+            if (AuthoriseHelper.Authorise(LoginTb.Text, PassTb.Password))
             {
                 CAPTCHAWindow cAPTCHAWindow = new CAPTCHAWindow();
                 if (cAPTCHAWindow.ShowDialog() == true)
