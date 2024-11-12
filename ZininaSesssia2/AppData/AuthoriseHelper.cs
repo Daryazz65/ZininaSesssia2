@@ -43,8 +43,6 @@ namespace ZininaSesssia2.AppData
                         MessageBoxHelper.Error("Неправильно введен логин или пароль");
                         return false;
                     }
-                //}
-
                 else
                 {
                     return false;
@@ -58,51 +56,7 @@ namespace ZininaSesssia2.AppData
                     return false;
                 }
             }
-
         }
-        //public static bool Authorise(string login, string password, string role)
-        //{
-        //    if (login == string.Empty || password == string.Empty)
-        //    {
-        //        MessageBoxHelper.Error("Не все поля для ввода были заполнены.");
-        //        return false;
-        //    }
-        //    else
-        //    {
-        //        if (role == "Cотрудник методички")
-        //        {
-        //            List<User> users = _context.Users.ToList();
-        //            foreach (User us in users)
-        //            {
-        //                if (login == us.Password && password == us.Password)
-        //                {
-        //                    selectedUser = us;
-        //                    return true;
-        //                }
-        //            }
-        //            if (selectedUser == null)
-        //            {
-        //                MessageBoxHelper.Error("Неправильно введен логин или пароль");
-        //                return false;
-        //            }
-        //        }
-
-        //        else
-        //        {
-        //            return false;
-        //        }
-        //        if (selectedUser != null)
-        //        {
-        //            return true;
-        //        }
-        //        else
-        //        {
-        //            return false;
-        //        }
-        //    }
-
-        //}
-
         /// <summary>
         /// Генерирует текст капчи.
         /// </summary>
